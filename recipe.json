@@ -1,0 +1,129 @@
+{
+  "recipes": [
+    {
+      "name": "DalMakhni",
+      "desc": "Dal Makhani is one of the most popular lentil recipes from the North Indian Punjabi cuisine made with Whole Black Lentils",
+      "inc": [
+        {
+          "id": "1",
+          "incName": "whole black gram",
+          "quantity": "140 g"
+        },
+        {
+          "id": "2",
+          "incName": "Kidney beans",
+          "quantity": "40 g"
+        },
+        {
+          "id": "3",
+          "incName": "onions",
+          "quantity": "50 g"
+        },
+        {
+          "id": "4",
+          "incName": "Chopped green chilies",
+          "quantity": "1 tbs"
+        },
+        {
+          "id": "5",
+          "incName": "oGinfer-Garlic paste",
+          "quantity": "2 tbs"
+        },
+        {
+          "id": "6",
+          "incName": "Tomato pureed",
+          "quantity": "200 g"
+        },
+        {
+          "id": "7",
+          "incName": "onions",
+          "quantity": "50 g"
+        },
+        {
+          "id": "8",
+          "incName": "Cumin seed",
+          "quantity": "1/2  tbs"
+        },
+        {
+          "id": "9",
+          "incName": "Cloves, cardamon, tejpatta, kasuri methi, salt",
+          "quantity": ""
+        },
+        {
+          "id": "10",
+          "incName": "Butter",
+          "quantity": "3 tbs"
+        }
+      ],
+      "dir": "Soak both the whole urad dal and rajma overnight in enough water for 8 to 9 hours or overnight. Later drain them well. Pressure cook for 18 to 20 whistles on a high flame, till both the urad dal and rajma have cooked thoroughly and softened.",
+      "image": "/assets/dalMakhni.png",
+      "id": 1
+    },
+    {
+      "name": "Tea",
+      "desc": "It is easy to make",
+      "inc": [
+        {
+          "id": "1",
+          "incName": "Milk",
+          "quantity": "200 ml"
+        },
+        {
+          "id": "2",
+          "incName": "Tea bag",
+          "quantity": "1 pcs"
+        }
+      ],
+      "dir": "get hot milk in acup and dip one teabag and on spoon sugar. wait for few min and enjoy your tea",
+      "image": "url",
+      "id": 2
+    },
+    {
+      "name": "asdasd",
+      "desc": "asdasda",
+      "inc": [
+        {
+          "id": 1,
+          "incName": "asdasdadasd",
+          "quantity": "asdasd"
+        }
+      ],
+      "dir": "asdasdasd",
+      "image": "asdasda",
+      "id": 3
+    },
+    {
+      "name": "asdasds",
+      "desc": "aa",
+      "inc": [
+        {
+          "id": 1,
+          "incName": "asdasdas",
+          "quantity": "sdasdasd"
+        }
+      ],
+      "dir": "dads",
+      "image": "asdasdasd",
+      "id": 4
+    },
+    {
+      "name": "olive bread",
+      "desc": "bread",
+      "inc": [
+        {
+          "id": 1,
+          "incName": "bread",
+          "quantity": "2"
+        },
+        {
+          "id": 2,
+          "incName": "Olive",
+          "quantity": "5"
+        }
+      ],
+      "dir": "baked in oven",
+      "image": "https://images.unsplash.com/photo-1619450233005-d62671210434?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "id": 5
+    }
+  ]
+}
