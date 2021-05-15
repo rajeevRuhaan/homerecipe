@@ -13,11 +13,14 @@ const SingleRecipe = () => {
 
   useEffect(() => {
     if (!singleRecipe) {
-      axios.get(`http://localhost:3001/recipes/${id}`).then((res) => {
-        setRecipe(res.data);
-      });
+      //http://localhost:3001/recipes/${id}
+      axios
+        .get(`https://hidden-garden-15978.herokuapp.com/newrecipe/find/${id}`)
+        .then((res) => {
+          setRecipe(res.data);
+        });
     }
-  });
+  }, []);
 
   console.log("singleRecipe", singleRecipe);
 
@@ -28,34 +31,43 @@ const SingleRecipe = () => {
 
   if (singleRecipe) {
     recipeData = (
-      <div className="card" style={{ width: "20 rem" }}>
+      <div className="card" style={{ width: "35rem" }}>
         <img
           src={singleRecipe.image}
           className="card-img-top"
           alt={singleRecipe.name}
         />
         <div className="card-body">
-          <h5 classname="card-title">{singleRecipe.name}</h5>
-          <p className="card-text">{singleRecipe.desc}</p>
+          <h5 className="card-title">{singleRecipe.name}</h5>
+          <p className="card-text">{singleRecipe.description}</p>
         </div>
         <p>
           <b>Ingredients</b>
         </p>
-        <ul>
-          {singleRecipe.inc.map((item) => {
+        {/* <ul>
+          {singleRecipe.recipeIngredient.map((item) => {
             return (
               <li key={item.id}>
-                {item.incName} {item.quantity}
+                {item.ingredientName} {item.quantity}
               </li>
             );
           })}
-        </ul>
+        </ul> */}
+
         <p>
+          <b>Instructions</b>
+        </p>
+        {/* <ul>
+          {singleRecipe.recipeStep.map((item) => {
+            return <li key={item.id}>{item.step}</li>;
+          })}
+        </ul> */}
+        {/* <p>
           <b>Instructiion</b>
         </p>
         <ul>
           <li>{singleRecipe.dir}</li>
-        </ul>
+        </ul> */}
         <div>
           <button onClick={() => history.goBack()} className="btn btn-primary">
             Back to Recipe List
@@ -65,12 +77,7 @@ const SingleRecipe = () => {
     );
   }
 
-  return (
-    <div>
-      <p>hello single recipe</p>
-      {recipeData}
-    </div>
-  );
+  return <div>{recipeData}</div>;
 };
 
 export default SingleRecipe;

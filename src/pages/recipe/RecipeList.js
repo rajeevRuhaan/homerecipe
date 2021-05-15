@@ -3,14 +3,15 @@ import RecipeCard from "./RecipeCard";
 
 const RecipeList = ({ getRecipes }) => {
   console.log("getrecipes", getRecipes);
+
   return (
-    <div>
+    <div className="recipelist">
       {getRecipes.map((a) => (
         <RecipeCard
           key={a.id}
           name={a.name}
           image={a.image}
-          desc={a.desc}
+          description={a.description}
           link={a.id}
         />
       ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 
-const RecipeCard = ({ image, name, desc, link }) => {
+const RecipeCard = ({ image, name, description, link }) => {
   let match = useRouteMatch();
 
   const truncate = (str, no_words) => {
@@ -9,10 +9,10 @@ const RecipeCard = ({ image, name, desc, link }) => {
   };
 
   return (
-    <div className="card">
+    <div className="recipecard">
       <img src={image} alt={name} />
       <h3>{name}</h3>
-      <p> {truncate(desc, 50)} ...</p>
+      <p> {truncate(description, 50)} ...</p>
       <Link to={`${match.url}/${link}`}>Read more</Link>
     </div>
   );

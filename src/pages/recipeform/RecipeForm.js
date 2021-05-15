@@ -8,14 +8,25 @@ import Col from "react-bootstrap/Col";
 const RecipeForm = () => {
   const [data, setData] = useState({
     name: "",
-    desc: "",
-    inc: [],
-    dir: "",
+    description: "",
+    recipeIngredient: [],
+    image: "",
+    direction: [],
   });
 
   const [ingredients, setIngredients] = useState([
-    { id: 1, incName: "", quantity: "" },
+    { id: 1, ingredientName: "", quantity: "" },
   ]);
+
+  const [recipeStep, setRecipeStep] = useState([{ id: 1, step: "" }]);
+
+  const changeStep = (e, i) => {
+    const { name, value } = e.target;
+    const listStep = [...recipeStep];
+    listStep[i][name] = value;
+    setRecipeStep(listStep);
+    setData({ ...data, direction: recipeStep });
+  };
 
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -26,18 +37,31 @@ const RecipeForm = () => {
     const list = [...ingredients];
     list[i][name] = value;
     setIngredients(list);
-    setData({ ...data, inc: ingredients });
+    setData({ ...data, recipeIngredient: ingredients });
   };
 
   const addMore = (e, i) => {
     e.preventDefault();
-    const newInc = { id: ingredients.length + 1, incName: "", quantity: "" };
+    const newInc = {
+      id: ingredients.length + 1,
+      ingredientName: "",
+      quantity: "",
+    };
     setIngredients([...ingredients, newInc]);
   };
 
+  const addStep = (e, i) => {
+    e.preventDefault();
+    const newStep = { id: ingredients.length + 1, step: "" };
+    setRecipeStep([...recipeStep, newStep]);
+  };
+
   const submitData = (e) => {
-    axios.post("http://localhost:3001/recipes", data);
-    e.target.reset();
+    e.preventDefault();
+    //http://localhost:3001/recipes
+    //https://hidden-garden-15978.herokuapp.com/newrecipe/add
+    axios.post("https://hidden-garden-15978.herokuapp.com/newrecipe/add", data);
+    //e.target.reset();
   };
 
   return (
@@ -52,12 +76,12 @@ const RecipeForm = () => {
           as="textarea"
           rows={3}
           type="text"
-          name="desc"
+          name="description"
           onChange={changeData}
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label htmlFor="">Image</Form.Label>
+        <Form.Label htmlFor="">Image url</Form.Label>
         <Form.Control type="text" name="image" onChange={changeData} />
       </Form.Group>
       <p>Ingredients</p>
@@ -78,7 +102,7 @@ const RecipeForm = () => {
                   <Form.Label htmlFor="">Ingredient</Form.Label>
                   <Form.Control
                     type="text"
-                    name="incName"
+                    name="ingredientName"
                     onChange={(e) => changeIncData(e, i)}
                   />
                 </Col>
@@ -91,13 +115,38 @@ const RecipeForm = () => {
       <Button variant="outline-success" onClick={addMore}>
         add more
       </Button>
-      <Form.Group>
+
+      <p>Instruction</p>
+      {recipeStep.map((_, i) => {
+        return (
+          <div key={i}>
+            <Form.Group>
+              <Form.Label htmlFor="">Steps</Form.Label>
+              <Form.Control
+                // as="textarea"
+                // rows={1}
+                type="text"
+                name="step"
+                onChange={(e) => changeStep(e, i)}
+              ></Form.Control>
+            </Form.Group>
+          </div>
+        );
+      })}
+
+      <Button variant="outline-success" onClick={addStep}>
+        add more
+      </Button>
+
+      {/* <Form.Group>
         <Form.Label>Directions</Form.Label>
         <Form.Control as="textarea" rows={3} name="dir" onChange={changeData} />
-      </Form.Group>
-      <Button type="submit" variant="success" value="Send data">
-        Post recipe
-      </Button>
+      </Form.Group> */}
+      <div className="postbutton">
+        <Button type="submit" variant="success" value="Send data">
+          Post recipe
+        </Button>
+      </div>
     </Form>
   );
 };

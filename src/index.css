@@ -12,5 +12,41 @@ code {
     monospace;
 }
 
-.singleRecipe {
+/**********recipe card list design   *****/
+.recipelist {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+/**********recipe card design   *****/
+.recipecard {
+  background: #f4f4f4;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  padding: 1rem;
+  list-style: none;
+}
+.recipecard img {
+  width: 350px;
+}
+
+/**********recipe singlecard  design   *****/
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*****post button ***/
+
+.postbutton {
+  display: block;
+  margin: 1em auto;
 }
