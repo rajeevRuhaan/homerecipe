@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import SingleRecipe from "./SingleRecipe";
-import RecipeList from "./RecipeList";
+import DeleteRecipe from "./DeleteRecipe";
+
 import SearchBox from "../../components/SearchBox";
 
 import axios from "axios";
+import RecipeList from "./RecipeList";
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   let match = useRouteMatch();
-  //console.log(match);
+  console.log(match);
 
   const searchValueHandler = (event) => {
     setSearchInput(event.target.value);
@@ -30,8 +32,19 @@ const Recipe = () => {
       .toLocaleLowerCase()
       .includes(searchInput.toLocaleLowerCase());
   });
-  console.log("recipeFilete", recipeFilter);
+  console.log("recipeFilter", recipeFilter);
 
+  // const list = recipeFilter.map((a) => {
+  //   return (
+  //     <RecipeCard
+  //       key={a.id}
+  //       name={a.name}
+  //       image={a.image}
+  //       description={a.description}
+  //       link={a.id}
+  //     />
+  //   );
+  // });
   // const recipeList = recipeFilter.map((a) => {
   //   return <RecipeList getRecipes={a} />;
   // });
@@ -39,13 +52,16 @@ const Recipe = () => {
   return (
     <main>
       <Switch>
-        <Route path={`${match.path}/:id`}>
+        <Route path={`${match.path}/:id`} exact>
           <SingleRecipe />
+        </Route>
+        <Route path={`${match.path}/:id/remove`}>
+          <DeleteRecipe />
         </Route>
         <Route path="/recipe">
           <SearchBox search={searchValueHandler} />
-          {/* <div>{recipeList}</div> */}
-          <RecipeList getRecipes={recipe} />
+          {/* <div className="recipelist">{list}</div> */}
+          <RecipeList getRecipes={recipeFilter} />
         </Route>
       </Switch>
     </main>

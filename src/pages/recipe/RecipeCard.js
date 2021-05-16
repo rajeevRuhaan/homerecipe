@@ -14,6 +14,9 @@ const RecipeCard = ({ image, name, description, link }) => {
       <h3>{name}</h3>
       <p> {truncate(description, 50)} ...</p>
       <Link to={`${match.url}/${link}`}>Read more</Link>
+      <div>
+        <Link to={`${match.url}/${link}/remove`}>Delete Card</Link>
+      </div>
     </div>
   );
 };

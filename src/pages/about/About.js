@@ -1,6 +1,6 @@
 import React from "react";
 import FeedBack from "./FeedBack";
-import rajeev from "../../images/rajeev.jpg";
+//import rajeev from "../../images/rajeev.jpg";
 import "./About.css";
 
 const About = () => {

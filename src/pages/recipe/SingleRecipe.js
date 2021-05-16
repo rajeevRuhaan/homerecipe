@@ -30,6 +30,13 @@ const SingleRecipe = () => {
   }
 
   if (singleRecipe) {
+    // const listIngredients = (ingredients) =>
+    //   ingredients.map((ingredient) => (
+    //     <li key={ingredient.id}>
+    //       {ingredient.ingredientName} {ingredient.quantity}
+    //     </li>
+    //   ));
+
     recipeData = (
       <div className="card" style={{ width: "35rem" }}>
         <img
@@ -43,25 +50,26 @@ const SingleRecipe = () => {
         </div>
         <p>
           <b>Ingredients</b>
+          {/* <ul>{listIngredients(singleRecipe.recipeIngredient)}</ul> */}
         </p>
-        {/* <ul>
-          {singleRecipe.recipeIngredient.map((item) => {
+        <ul>
+          {singleRecipe.ingredients.map((item) => {
             return (
               <li key={item.id}>
                 {item.ingredientName} {item.quantity}
               </li>
             );
           })}
-        </ul> */}
+        </ul>
 
         <p>
           <b>Instructions</b>
         </p>
-        {/* <ul>
-          {singleRecipe.recipeStep.map((item) => {
+        <ul>
+          {singleRecipe.direction.map((item) => {
             return <li key={item.id}>{item.step}</li>;
           })}
-        </ul> */}
+        </ul>
         {/* <p>
           <b>Instructiion</b>
         </p>

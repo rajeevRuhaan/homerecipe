@@ -61,7 +61,7 @@ const RecipeForm = () => {
     //http://localhost:3001/recipes
     //https://hidden-garden-15978.herokuapp.com/newrecipe/add
     axios.post("https://hidden-garden-15978.herokuapp.com/newrecipe/add", data);
-    //e.target.reset();
+    e.target.reset();
   };
 
   return (
