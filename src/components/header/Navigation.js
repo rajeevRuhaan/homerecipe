@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 // import { Link } from "react-router-dom";
 
@@ -16,13 +17,13 @@ const Navigation = () => {
           className="justify-content-end"
         >
           <Nav>
-            <Nav.Link exact="true" href="/">
+            <LinkContainer exact="true" to="/">
               {" "}
               Home
-            </Nav.Link>
-            <Nav.Link href="/about"> About</Nav.Link>
-            <Nav.Link href="/recipe">Recipe</Nav.Link>
-            <Nav.Link href="/form">Form</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/about"> About</LinkContainer>
+            <LinkContainer to="/recipe">Recipe</LinkContainer>
+            <LinkContainer to="/form">Form</LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
