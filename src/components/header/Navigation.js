@@ -17,7 +17,7 @@ const Navigation = () => {
           className="justify-content-end"
         >
           <Nav>
-            <LinkContainer exact to="/about">
+            <LinkContainer exact to="/">
               <Nav.Link> Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/about">
