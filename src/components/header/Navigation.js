@@ -17,13 +17,18 @@ const Navigation = () => {
           className="justify-content-end"
         >
           <Nav>
-            <LinkContainer exact="true" to="/">
-              {" "}
-              Home
+            <LinkContainer exact to="/about">
+              <Nav.Link> Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/about"> About</LinkContainer>
-            <LinkContainer to="/recipe">Recipe</LinkContainer>
-            <LinkContainer to="/form">Form</LinkContainer>
+            <LinkContainer to="/about">
+              <Nav.Link> About</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/recipe">
+              <Nav.Link href="/recipe">Recipe</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/form">
+              <Nav.Link href="/form">Form</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

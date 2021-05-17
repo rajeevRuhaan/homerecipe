@@ -20,7 +20,7 @@ const SingleRecipe = () => {
           setRecipe(res.data);
         });
     }
-  }, []);
+  });
 
   console.log("singleRecipe", singleRecipe);
 

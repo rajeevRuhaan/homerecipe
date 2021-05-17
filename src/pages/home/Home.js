@@ -1,6 +1,6 @@
 import React from "react";
 import Food from "../../images/food-header-unsplash.jpg";
-import Cooking from "../../video/cooking.mp4";
+//import Cooking from "../../video/cooking.mp4";
 
 const Home = () => {
   return (
