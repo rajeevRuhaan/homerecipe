@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="sm" bg="standard" variant="" fixed="top">
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <h1>Recipe Book</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
