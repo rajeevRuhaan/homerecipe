@@ -3,7 +3,7 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import SingleRecipe from "./SingleRecipe";
 import DeleteRecipe from "./DeleteRecipe";
 
-import SearchBox from "../../components/SearchBox";
+import SearchBox from "../../components/search/SearchBox";
 
 import axios from "axios";
 import RecipeList from "./RecipeList";

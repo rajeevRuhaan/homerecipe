@@ -56,6 +56,12 @@ const RecipeForm = () => {
     setRecipeStep([...recipeStep, newStep]);
   };
 
+  // const deleteStep = (e, i) => {
+  //   e.preventDefault();
+  //   const oldStep = { id: ingredients.length - 1, step: "" };
+  //   setRecipeStep([...recipeStep, oldStep]);
+  // };
+
   const submitData = (e) => {
     e.preventDefault();
     //http://localhost:3001/recipes
@@ -135,8 +141,11 @@ const RecipeForm = () => {
       })}
 
       <Button variant="outline-success" onClick={addStep}>
-        add more
+        Add More Step
       </Button>
+      {/* <Button variant="outline-success" onClick={deleteStep}>
+        Delet Step
+      </Button> */}
 
       {/* <Form.Group>
         <Form.Label>Directions</Form.Label>

@@ -7,11 +7,20 @@ import { LinkContainer } from "react-router-bootstrap";
 const Navigation = () => {
   return (
     <div>
-      <Navbar collapseOnSelect expand="sm" bg="standard" variant="" fixed="top">
+      <Navbar
+        collapseOnSelect
+        expand="sm"
+        bg="light"
+        variant="light"
+        fixed="top"
+      >
         <Navbar.Brand href="/">
           <h1>Recipe Book</h1>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          variant="outline-info"
+        />
         <Navbar.Collapse
           id="responsive-navbar-nav"
           className="justify-content-end"

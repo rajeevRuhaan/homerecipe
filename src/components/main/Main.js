@@ -7,7 +7,7 @@ import RecipeForm from "../../pages/recipeform/RecipeForm";
 
 const Main = () => {
   return (
-    <section style={{ margin: "100px" }}>
+    <section style={{ margin: "10px" }}>
       <div>
         <Switch>
           <Route path="/" exact component={Home} />
