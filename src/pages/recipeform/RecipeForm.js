@@ -71,7 +71,7 @@ const RecipeForm = () => {
   };
 
   return (
-    <Form onSubmit={submitData}>
+    <Form onSubmit={submitData} className="form">
       <Form.Group>
         <Form.Label htmlFor="">Name</Form.Label>
         <Form.Control type="text" name="name" onChange={changeData} />
