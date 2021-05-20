@@ -22,8 +22,10 @@ const About = () => {
       </p>
       <p>
         {" "}
-        The project requirement was to create our own API. The project RESTful
-        API uses symfony in a PHP. You can get my project from{" "}
+        The project requirement was to create our own API. The project uses
+        RESTful API symfony in a PHP and uses PostgreSQL open-source relational
+        database.The database hosting is using herroku cloud platform. You can
+        get my project from{" "}
         <a href="https://github.com/rajeevRuhaan/homerecipe">my github repo</a>.
       </p>
       <p>Feedback Form</p>
