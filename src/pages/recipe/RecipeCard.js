@@ -22,7 +22,16 @@ const RecipeCard = ({ image, name, description, link }) => {
       <p> {truncate(description, 50)} ...</p>
       <Link to={`${match.url}/${link}`}>Read more</Link>
 
-      <Link to={`${match.url}/${link}/remove`}>Delete Card</Link>
+      <Link
+        to={`${match.url}/${link}/remove`}
+        style={{
+          display: "flex-inline",
+          flexDirection: "row",
+          marginLeft: "10rem",
+        }}
+      >
+        Delete Card
+      </Link>
     </div>
   );
 };
