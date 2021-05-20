@@ -34,21 +34,6 @@ const Recipe = () => {
   });
   console.log("recipeFilter", recipeFilter);
 
-  // const list = recipeFilter.map((a) => {
-  //   return (
-  //     <RecipeCard
-  //       key={a.id}
-  //       name={a.name}
-  //       image={a.image}
-  //       description={a.description}
-  //       link={a.id}
-  //     />
-  //   );
-  // });
-  // const recipeList = recipeFilter.map((a) => {
-  //   return <RecipeList getRecipes={a} />;
-  // });
-
   return (
     <main>
       <Switch>

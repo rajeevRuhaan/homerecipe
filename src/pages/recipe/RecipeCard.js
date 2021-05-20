@@ -8,15 +8,21 @@ const RecipeCard = ({ image, name, description, link }) => {
     return str.split(" ").splice(0, no_words).join(" ");
   };
 
+  // function deleteMe() {
+  //   const r = window.confirm("do you really wan to delete this?");
+  //   if (r === true) {
+  //     <Link to={`${match.url}/${link}/remove`} />;
+  //   }
+  // }
+
   return (
     <div className="recipecard">
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p> {truncate(description, 50)} ...</p>
       <Link to={`${match.url}/${link}`}>Read more</Link>
-      <div>
-        <Link to={`${match.url}/${link}/remove`}>Delete Card</Link>
-      </div>
+
+      <Link to={`${match.url}/${link}/remove`}>Delete Card</Link>
     </div>
   );
 };
